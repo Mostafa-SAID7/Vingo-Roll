@@ -82,114 +82,122 @@ const ProductShowcase = () => {
               onHoverEnd={() => setHoveredProduct(null)}
               className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                
-                {/* Badge */}
-                <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  {product.badge}
-                </div>
+              <Link to={`/product/${product.id}`}>
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {product.badge}
+                  </div>
 
-                {/* Action Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
-                    opacity: hoveredProduct === product.id ? 1 : 0,
-                    y: hoveredProduct === product.id ? 0 : 20
-                  }}
-                  className="absolute top-4 right-4 flex flex-col space-y-2"
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors"
+                  {/* Action Buttons */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ 
+                      opacity: hoveredProduct === product.id ? 1 : 0,
+                      y: hoveredProduct === product.id ? 0 : 20
+                    }}
+                    className="absolute top-4 right-4 flex flex-col space-y-2"
                   >
-                    <Heart size={18} />
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-purple-600 transition-colors"
-                  >
-                    <Eye size={18} />
-                  </motion.button>
-                </motion.div>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={(e) => e.preventDefault()}
+                      className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors"
+                    >
+                      <Heart size={18} />
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={(e) => e.preventDefault()}
+                      className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-purple-600 transition-colors"
+                    >
+                      <Eye size={18} />
+                    </motion.button>
+                  </motion.div>
 
-                {/* Quick Add to Cart */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
-                    opacity: hoveredProduct === product.id ? 1 : 0,
-                    y: hoveredProduct === product.id ? 0 : 20
-                  }}
-                  className="absolute bottom-4 left-4 right-4"
-                >
-                  <Link to="/cart">
+                  {/* Quick Add to Cart */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ 
+                      opacity: hoveredProduct === product.id ? 1 : 0,
+                      y: hoveredProduct === product.id ? 0 : 20
+                    }}
+                    className="absolute bottom-4 left-4 right-4"
+                  >
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = '/cart';
+                      }}
                       className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-full font-semibold flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300"
                     >
                       <ShoppingCart size={18} />
                       <span>Add to Cart</span>
                     </motion.button>
-                  </Link>
-                </motion.div>
-              </div>
+                  </motion.div>
+                </div>
+              </Link>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {product.name}
-                </h3>
+              <Link to={`/product/${product.id}`}>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {product.name}
+                  </h3>
 
-                <div className="flex items-center space-x-2 mb-3">
-                  <div className="flex items-center space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={14}
-                        className={`${
-                          i < Math.floor(product.rating)
-                            ? 'text-yellow-400 fill-current'
-                            : 'text-gray-300'
-                        }`}
-                      />
-                    ))}
+                  <div className="flex items-center space-x-2 mb-3">
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={14}
+                          className={`${
+                            i < Math.floor(product.rating)
+                              ? 'text-yellow-400 fill-current'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600">
+                      {product.rating} ({product.reviews})
+                    </span>
                   </div>
-                  <span className="text-sm text-gray-600">
-                    {product.rating} ({product.reviews})
-                  </span>
-                </div>
 
-                <div className="flex items-center space-x-3 mb-4">
-                  <span className="text-2xl font-bold text-gray-900">
-                    ${product.price}
-                  </span>
-                  <span className="text-lg text-gray-500 line-through">
-                    ${product.originalPrice}
-                  </span>
-                  <span className="text-sm text-green-600 font-medium">
-                    {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% off
-                  </span>
-                </div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <span className="text-2xl font-bold text-gray-900">
+                      ${product.price}
+                    </span>
+                    <span className="text-lg text-gray-500 line-through">
+                      ${product.originalPrice}
+                    </span>
+                    <span className="text-sm text-green-600 font-medium">
+                      {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% off
+                    </span>
+                  </div>
 
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-600">Colors:</span>
-                  <div className="flex space-x-2">
-                    {product.colors.map((color, colorIndex) => (
-                      <div
-                        key={colorIndex}
-                        className="w-6 h-6 rounded-full border-2 border-gray-200 cursor-pointer hover:scale-110 transition-transform"
-                        style={{ backgroundColor: color }}
-                      />
-                    ))}
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm text-gray-600">Colors:</span>
+                    <div className="flex space-x-2">
+                      {product.colors.map((color, colorIndex) => (
+                        <div
+                          key={colorIndex}
+                          className="w-6 h-6 rounded-full border-2 border-gray-200 cursor-pointer hover:scale-110 transition-transform"
+                          style={{ backgroundColor: color }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -200,7 +208,7 @@ const ProductShowcase = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <Link to="/categories">
+          <Link to="/shop">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
