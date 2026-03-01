@@ -34,10 +34,10 @@ const Footer = () => {
     ],
     'Support': [
       { name: 'Contact Us', link: '/contact' },
-      { name: 'Size Guide', link: '/services' },
-      { name: 'Care Instructions', link: '/services' },
-      { name: 'Returns & Exchanges', link: '/services' },
-      { name: 'Shipping Info', link: '/services' },
+      { name: 'Size Guide', link: '/size-guide' },
+      { name: 'Care Instructions', link: '/care-instructions' },
+      { name: 'Returns & Exchanges', link: '/returns-exchanges' },
+      { name: 'Shipping Info', link: '/shipping-info' },
       { name: 'FAQ', link: '/faq' }
     ],
     'Company': [

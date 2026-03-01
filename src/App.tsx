@@ -24,6 +24,10 @@ import DesignerCollection from './pages/DesignerCollection';
 import SaleItems from './pages/SaleItems';
 import OurStory from './pages/OurStory';
 import Reviews from './pages/Reviews';
+import SizeGuide from './pages/SizeGuide';
+import CareInstructions from './pages/CareInstructions';
+import ReturnsExchanges from './pages/ReturnsExchanges';
+import ShippingInfo from './pages/ShippingInfo';
 
 function App() {
   return (
@@ -53,6 +57,10 @@ function App() {
           <Route path="/sale-items" element={<SaleItems />} />
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/size-guide" element={<SizeGuide />} />
+          <Route path="/care-instructions" element={<CareInstructions />} />
+          <Route path="/returns-exchanges" element={<ReturnsExchanges />} />
+          <Route path="/shipping-info" element={<ShippingInfo />} />
         </Routes>
         <Footer />
       </div>
