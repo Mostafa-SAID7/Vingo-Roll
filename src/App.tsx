@@ -22,6 +22,8 @@ import SheerCurtains from './pages/SheerCurtains';
 import ThermalCurtains from './pages/ThermalCurtains';
 import DesignerCollection from './pages/DesignerCollection';
 import SaleItems from './pages/SaleItems';
+import OurStory from './pages/OurStory';
+import Reviews from './pages/Reviews';
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
           <Route path="/thermal-curtains" element={<ThermalCurtains />} />
           <Route path="/designer-collection" element={<DesignerCollection />} />
           <Route path="/sale-items" element={<SaleItems />} />
+          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/reviews" element={<Reviews />} />
         </Routes>
         <Footer />
       </div>

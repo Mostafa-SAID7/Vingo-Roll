@@ -42,9 +42,9 @@ const Footer = () => {
     ],
     'Company': [
       { name: 'About Us', link: '/about' },
-      { name: 'Our Story', link: '/about' },
+      { name: 'Our Story', link: '/our-story' },
       { name: 'Inspiration', link: '/inspiration' },
-      { name: 'Reviews', link: '/about' }
+      { name: 'Reviews', link: '/reviews' }
     ]
   };
 
