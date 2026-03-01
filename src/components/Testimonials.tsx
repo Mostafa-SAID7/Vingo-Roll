@@ -4,43 +4,43 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Chen',
-    role: 'Digital Nomad',
-    country: 'Singapore',
+    name: 'Sarah Johnson',
+    role: 'Homeowner',
+    country: 'Toronto, Canada',
     rating: 5,
-    text: 'FlowPay has completely changed how I manage money while traveling. No more worrying about exchange rates or hidden fees.',
-    avatar: '👩‍💻'
+    text: 'Absolutely stunning curtains! The quality exceeded my expectations and they transformed my living room completely. The custom sizing was perfect.',
+    avatar: '👩‍💼'
   },
   {
-    name: 'Marcus Johnson',
-    role: 'Small Business Owner',
-    country: 'Canada',
+    name: 'Michael Chen',
+    role: 'Interior Designer',
+    country: 'Vancouver, Canada',
     rating: 5,
-    text: 'Paying international suppliers has never been easier. FlowPay saves us thousands in bank fees every year.',
+    text: 'Professional service from start to finish. The design consultation was incredibly helpful and the installation was flawless. Highly recommend!',
     avatar: '👨‍💼'
   },
   {
-    name: 'Priya Patel',
-    role: 'Software Engineer',
-    country: 'India',
+    name: 'Emily Rodriguez',
+    role: 'Homeowner',
+    country: 'Montreal, Canada',
     rating: 5,
-    text: 'Finally, a financial service that treats customers fairly. Transparent pricing and excellent service.',
+    text: 'The sheer curtains are exactly what I was looking for. They let in just the right amount of light while maintaining privacy. Beautiful quality!',
     avatar: '👩‍💻'
   },
   {
-    name: 'James Wilson',
-    role: 'Freelance Designer',
-    country: 'UK',
+    name: 'David Thompson',
+    role: 'Homeowner',
+    country: 'Calgary, Canada',
     rating: 5,
-    text: 'Getting paid by international clients is seamless now. The multi-currency account is a game-changer.',
+    text: 'Fast shipping, excellent packaging, and the curtains look amazing in our bedroom. The blackout feature works perfectly for better sleep.',
     avatar: '👨‍🎨'
   },
   {
-    name: 'Maria Rodriguez',
-    role: 'E-commerce Entrepreneur',
-    country: 'Spain',
+    name: 'Lisa Park',
+    role: 'Home Office Owner',
+    country: 'Ottawa, Canada',
     rating: 5,
-    text: 'Managing payments in multiple currencies used to be a nightmare. FlowPay made it simple and affordable.',
+    text: 'Love the eco-friendly linen curtains! They add such a natural, calming feel to our home office. Great customer service too.',
     avatar: '👩‍💼'
   }
 ];
@@ -57,7 +57,7 @@ const Testimonials = () => {
         >
           <h2 className="text-5xl md:text-6xl font-light text-white mb-6">
             Loved by{' '}
-            <span className="text-lime-400 font-medium">millions</span>
+            <span className="text-lime-400 font-medium">thousands</span>
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
             Don't just take our word for it. See what our customers 
@@ -126,7 +126,7 @@ const Testimonials = () => {
             </div>
             <div className="w-px h-6 bg-slate-600" />
             <div className="text-slate-400">
-              Based on 1,247,000+ reviews
+              Based on 12,000+ reviews
             </div>
           </div>
         </motion.div>
