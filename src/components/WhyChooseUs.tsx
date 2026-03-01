@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Truck, Shield, Palette, Headphones, Ruler, Award } from 'lucide-react';
 
@@ -100,13 +101,15 @@ const WhyChooseUs = () => {
           <p className="text-xl mb-8 opacity-90">
             Book a free consultation with our design experts today
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300"
-          >
-            Schedule Consultation
-          </motion.button>
+          <Link to="/custom-design">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300"
+            >
+              Schedule Consultation
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

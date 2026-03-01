@@ -39,6 +39,16 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
             <Link 
+              to="/shop" 
+              className={`font-medium transition-colors ${
+                isActive('/shop') 
+                  ? 'text-purple-600 font-semibold' 
+                  : 'text-gray-700 hover:text-purple-600'
+              }`}
+            >
+              Shop
+            </Link>
+            <Link 
               to="/categories" 
               className={`font-medium transition-colors ${
                 isActive('/categories') 
@@ -184,6 +194,16 @@ const Navbar = () => {
             className="lg:hidden border-t border-gray-200 py-4"
           >
             <div className="flex flex-col space-y-4">
+              <Link 
+                to="/shop" 
+                className={`font-medium ${
+                  isActive('/shop') 
+                    ? 'text-purple-600 font-semibold' 
+                    : 'text-gray-700 hover:text-purple-600'
+                }`}
+              >
+                Shop
+              </Link>
               <Link 
                 to="/categories" 
                 className={`font-medium ${

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Truck, Shield } from 'lucide-react';
 
@@ -6,13 +7,13 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-20 left-20 w-32 h-32 bg-purple-300 rounded-full blur-3xl" />
         <div className="absolute top-40 right-32 w-48 h-48 bg-pink-300 rounded-full blur-3xl" />
         <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-indigo-300 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-16">
+      <div className="max-w-7xl mx-auto px-6 pt-20 pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -43,21 +44,29 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                <span>Shop Now</span>
-                <ArrowRight size={20} />
-              </motion.button>
-              <motion.button
+                <Link 
+                  to="/shop"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 w-full"
+                >
+                  <span>Shop Now</span>
+                  <ArrowRight size={20} />
+                </Link>
+              </motion.div>
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300"
               >
-                Custom Design
-              </motion.button>
+                <Link 
+                  to="/custom-design"
+                  className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 flex items-center justify-center"
+                >
+                  Custom Design
+                </Link>
+              </motion.div>
             </div>
 
             <div className="flex items-center space-x-8 pt-8">
@@ -80,65 +89,73 @@ const Hero = () => {
             className="relative"
           >
             <div className="grid grid-cols-2 gap-6">
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                className="bg-white rounded-3xl p-6 shadow-xl"
-              >
-                <div className="aspect-square bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl mb-4 flex items-center justify-center">
-                  <img 
-                    src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                    alt="Elegant curtains"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">Silk Elegance</h3>
-                <p className="text-purple-600 font-bold">$299</p>
-              </motion.div>
+              <Link to="/designer-collection">
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  className="bg-white rounded-3xl p-6 shadow-xl cursor-pointer"
+                >
+                  <div className="aspect-square bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl mb-4 flex items-center justify-center">
+                    <img 
+                      src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      alt="Elegant curtains"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Silk Elegance</h3>
+                  <p className="text-purple-600 font-bold">$299</p>
+                </motion.div>
+              </Link>
 
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: -2 }}
-                className="bg-white rounded-3xl p-6 shadow-xl mt-8"
-              >
-                <div className="aspect-square bg-gradient-to-br from-pink-100 to-pink-200 rounded-2xl mb-4 flex items-center justify-center">
-                  <img 
-                    src="https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                    alt="Modern blinds"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">Modern Blinds</h3>
-                <p className="text-purple-600 font-bold">$189</p>
-              </motion.div>
+              <Link to="/categories">
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  className="bg-white rounded-3xl p-6 shadow-xl mt-8 cursor-pointer"
+                >
+                  <div className="aspect-square bg-gradient-to-br from-pink-100 to-pink-200 rounded-2xl mb-4 flex items-center justify-center">
+                    <img 
+                      src="https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      alt="Modern blinds"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Modern Blinds</h3>
+                  <p className="text-purple-600 font-bold">$189</p>
+                </motion.div>
+              </Link>
 
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                className="bg-white rounded-3xl p-6 shadow-xl -mt-4"
-              >
-                <div className="aspect-square bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl mb-4 flex items-center justify-center">
-                  <img 
-                    src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                    alt="Blackout curtains"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">Blackout Pro</h3>
-                <p className="text-purple-600 font-bold">$159</p>
-              </motion.div>
+              <Link to="/blackout-curtains">
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  className="bg-white rounded-3xl p-6 shadow-xl -mt-4 cursor-pointer"
+                >
+                  <div className="aspect-square bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl mb-4 flex items-center justify-center">
+                    <img 
+                      src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      alt="Blackout curtains"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Blackout Pro</h3>
+                  <p className="text-purple-600 font-bold">$159</p>
+                </motion.div>
+              </Link>
 
-              <motion.div
-                whileHover={{ scale: 1.05, rotate: -2 }}
-                className="bg-white rounded-3xl p-6 shadow-xl"
-              >
-                <div className="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl mb-4 flex items-center justify-center">
-                  <img 
-                    src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                    alt="Sheer curtains"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-1">Sheer Delight</h3>
-                <p className="text-purple-600 font-bold">$129</p>
-              </motion.div>
+              <Link to="/sheer-curtains">
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  className="bg-white rounded-3xl p-6 shadow-xl cursor-pointer"
+                >
+                  <div className="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl mb-4 flex items-center justify-center">
+                    <img 
+                      src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                      alt="Sheer curtains"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Sheer Delight</h3>
+                  <p className="text-purple-600 font-bold">$129</p>
+                </motion.div>
+              </Link>
             </div>
 
             {/* Floating Badge */}
