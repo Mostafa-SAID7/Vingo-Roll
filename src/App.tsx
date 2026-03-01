@@ -30,6 +30,7 @@ import ReturnsExchanges from './pages/ReturnsExchanges';
 import ShippingInfo from './pages/ShippingInfo';
 import MeasuringService from './pages/MeasuringService';
 import Installation from './pages/Installation';
+import CustomDesign from './pages/CustomDesign';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
           <Route path="/shipping-info" element={<ShippingInfo />} />
           <Route path="/measuring-service" element={<MeasuringService />} />
           <Route path="/installation" element={<Installation />} />
+          <Route path="/custom-design" element={<CustomDesign />} />
         </Routes>
         <Footer />
       </div>

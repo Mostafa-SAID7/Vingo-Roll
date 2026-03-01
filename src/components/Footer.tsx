@@ -26,7 +26,7 @@ const Footer = () => {
     ],
     'Services': [
       { name: 'Our Services', link: '/services' },
-      { name: 'Custom Design', link: '/custom-orders' },
+      { name: 'Custom Design', link: '/custom-design' },
       { name: 'Measuring Service', link: '/measuring-service' },
       { name: 'Installation', link: '/installation' },
       { name: 'Design Consultation', link: '/custom-orders' },
