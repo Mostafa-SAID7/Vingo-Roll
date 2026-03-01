@@ -15,6 +15,13 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
 import Accessibility from './pages/Accessibility';
+import FAQ from './pages/FAQ';
+import ContactUs from './pages/ContactUs';
+import BlackoutCurtains from './pages/BlackoutCurtains';
+import SheerCurtains from './pages/SheerCurtains';
+import ThermalCurtains from './pages/ThermalCurtains';
+import DesignerCollection from './pages/DesignerCollection';
+import SaleItems from './pages/SaleItems';
 
 function App() {
   return (
@@ -35,6 +42,13 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/blackout-curtains" element={<BlackoutCurtains />} />
+          <Route path="/sheer-curtains" element={<SheerCurtains />} />
+          <Route path="/thermal-curtains" element={<ThermalCurtains />} />
+          <Route path="/designer-collection" element={<DesignerCollection />} />
+          <Route path="/sale-items" element={<SaleItems />} />
         </Routes>
         <Footer />
       </div>

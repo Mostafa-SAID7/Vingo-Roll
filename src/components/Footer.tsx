@@ -18,11 +18,11 @@ const Footer = () => {
   const footerLinks = {
     'Shop': [
       { name: 'All Categories', link: '/categories' },
-      { name: 'Blackout Curtains', link: '/categories' },
-      { name: 'Sheer Curtains', link: '/categories' },
-      { name: 'Thermal Curtains', link: '/categories' },
-      { name: 'Designer Collection', link: '/categories' },
-      { name: 'Sale Items', link: '/categories' }
+      { name: 'Blackout Curtains', link: '/blackout-curtains' },
+      { name: 'Sheer Curtains', link: '/sheer-curtains' },
+      { name: 'Thermal Curtains', link: '/thermal-curtains' },
+      { name: 'Designer Collection', link: '/designer-collection' },
+      { name: 'Sale Items', link: '/sale-items' }
     ],
     'Services': [
       { name: 'Our Services', link: '/services' },
@@ -33,12 +33,12 @@ const Footer = () => {
       { name: 'Bulk Orders', link: '/custom-orders' }
     ],
     'Support': [
-      { name: 'Contact Us', link: '/about' },
+      { name: 'Contact Us', link: '/contact' },
       { name: 'Size Guide', link: '/services' },
       { name: 'Care Instructions', link: '/services' },
       { name: 'Returns & Exchanges', link: '/services' },
       { name: 'Shipping Info', link: '/services' },
-      { name: 'FAQ', link: '/about' }
+      { name: 'FAQ', link: '/faq' }
     ],
     'Company': [
       { name: 'About Us', link: '/about' },
