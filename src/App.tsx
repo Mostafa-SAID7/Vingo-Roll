@@ -28,6 +28,8 @@ import SizeGuide from './pages/SizeGuide';
 import CareInstructions from './pages/CareInstructions';
 import ReturnsExchanges from './pages/ReturnsExchanges';
 import ShippingInfo from './pages/ShippingInfo';
+import MeasuringService from './pages/MeasuringService';
+import Installation from './pages/Installation';
 
 function App() {
   return (
@@ -61,6 +63,8 @@ function App() {
           <Route path="/care-instructions" element={<CareInstructions />} />
           <Route path="/returns-exchanges" element={<ReturnsExchanges />} />
           <Route path="/shipping-info" element={<ShippingInfo />} />
+          <Route path="/measuring-service" element={<MeasuringService />} />
+          <Route path="/installation" element={<Installation />} />
         </Routes>
         <Footer />
       </div>
