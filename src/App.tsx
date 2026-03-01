@@ -1,25 +1,44 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import FeaturedCategories from './components/FeaturedCategories';
-import ProductShowcase from './components/ProductShowcase';
-import WhyChooseUs from './components/WhyChooseUs';
-import CustomerReviews from './components/CustomerReviews';
-import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import Categories from './pages/Categories';
+import CustomOrders from './pages/CustomOrders';
+import Inspiration from './pages/Inspiration';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import Wishlist from './pages/Wishlist';
+import Cart from './pages/Cart';
+import Services from './pages/Services';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
+import Accessibility from './pages/Accessibility';
 
 function App() {
   return (
-    <div className="bg-white min-h-screen">
-      <Navbar />
-      <Hero />
-      <FeaturedCategories />
-      <ProductShowcase />
-      <WhyChooseUs />
-      <CustomerReviews />
-      <Newsletter />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/custom-orders" element={<CustomOrders />} />
+          <Route path="/inspiration" element={<Inspiration />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

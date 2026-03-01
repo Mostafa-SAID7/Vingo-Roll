@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Facebook, 
@@ -16,36 +17,34 @@ import {
 const Footer = () => {
   const footerLinks = {
     'Shop': [
-      'All Categories',
-      'Blackout Curtains',
-      'Sheer Curtains',
-      'Thermal Curtains',
-      'Designer Collection',
-      'Sale Items'
+      { name: 'All Categories', link: '/categories' },
+      { name: 'Blackout Curtains', link: '/categories' },
+      { name: 'Sheer Curtains', link: '/categories' },
+      { name: 'Thermal Curtains', link: '/categories' },
+      { name: 'Designer Collection', link: '/categories' },
+      { name: 'Sale Items', link: '/categories' }
     ],
     'Services': [
-      'Custom Design',
-      'Measuring Service',
-      'Installation',
-      'Design Consultation',
-      'Bulk Orders',
-      'Trade Program'
+      { name: 'Our Services', link: '/services' },
+      { name: 'Custom Design', link: '/custom-orders' },
+      { name: 'Measuring Service', link: '/services' },
+      { name: 'Installation', link: '/services' },
+      { name: 'Design Consultation', link: '/custom-orders' },
+      { name: 'Bulk Orders', link: '/custom-orders' }
     ],
     'Support': [
-      'Contact Us',
-      'Size Guide',
-      'Care Instructions',
-      'Returns & Exchanges',
-      'Shipping Info',
-      'FAQ'
+      { name: 'Contact Us', link: '/about' },
+      { name: 'Size Guide', link: '/services' },
+      { name: 'Care Instructions', link: '/services' },
+      { name: 'Returns & Exchanges', link: '/services' },
+      { name: 'Shipping Info', link: '/services' },
+      { name: 'FAQ', link: '/about' }
     ],
     'Company': [
-      'About Us',
-      'Our Story',
-      'Careers',
-      'Press',
-      'Sustainability',
-      'Reviews'
+      { name: 'About Us', link: '/about' },
+      { name: 'Our Story', link: '/about' },
+      { name: 'Inspiration', link: '/inspiration' },
+      { name: 'Reviews', link: '/about' }
     ]
   };
 
@@ -55,18 +54,20 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3 mb-6"
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">V</span>
-              </div>
-              <div>
-                <div className="text-2xl font-bold">Vingo Roll</div>
-                <div className="text-sm text-gray-400">Premium Curtains</div>
-              </div>
-            </motion.div>
+            <Link to="/">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-3 mb-6 cursor-pointer"
+              >
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">V</span>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">Vingo Roll</div>
+                  <div className="text-sm text-gray-400">Premium Curtains</div>
+                </div>
+              </motion.div>
+            </Link>
             
             <p className="text-gray-400 mb-6 leading-relaxed">
               Transform your windows with our premium collection of curtains, 
@@ -108,14 +109,14 @@ const Footer = () => {
             <div key={category}>
               <h3 className="text-white font-semibold mb-4 text-lg">{category}</h3>
               <ul className="space-y-3">
-                {links.map((link, index) => (
+                {links.map((item, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      to={item.link}
                       className="text-gray-400 hover:text-white transition-colors text-sm"
                     >
-                      {link}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -155,7 +156,16 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
               <div className="text-gray-400 text-sm">
-                © 2024 Vingo Roll. All rights reserved.
+                © 2024 - {new Date().getFullYear()}{' '}
+                <a 
+                  href="https://m-said-portfolio.netlify.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  M.Said
+                </a>
+                . All rights reserved.
               </div>
             </div>
 
@@ -175,18 +185,18 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center mt-6 space-y-2 md:space-y-0 md:space-x-6 text-gray-400 text-sm">
-            <a href="#" className="hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-white transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">
               Cookie Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/accessibility" className="hover:text-white transition-colors">
               Accessibility
-            </a>
+            </Link>
           </div>
         </div>
       </div>
